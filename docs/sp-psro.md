@@ -68,31 +68,31 @@ Multiple experiments with the same scenario can be launched on a single host by 
 ## Liar's Dice
 **SP-PSRO** (run both scripts together, launch manager first)
 ```bash
-conda activate sp_psro; cd ~/git/grl/grl/rl_apps/psro; export CUDA_VISIBLE_DEVICES=
+conda activate sp_psro; cd grl/rl_apps/psro; export CUDA_VISIBLE_DEVICES=0
 python general_psro_manager.py --scenario liars_dice_psro_dqn_shorter_avg_pol
 ```
 ```bash
-conda activate sp_psro; cd ~/git/grl/grl/rl_apps/psro; export CUDA_VISIBLE_DEVICES=
+conda activate sp_psro; cd grl/rl_apps/psro; export CUDA_VISIBLE_DEVICES=0
 python self_play_psro_avg_policy_br_both_players.py --scenario liars_dice_psro_dqn_shorter_avg_pol --instant_first_iter --avg_policy_learning_rate 0.1 --train_avg_policy_for_n_iters_after 10000 --force_sp_br_play_rate 0.05
 ```
 
 **SP-PSRO Last-Iterate Ablation** (run both scripts together, launch manager first)
 ```bash
-conda activate sp_psro; cd ~/git/grl/grl/rl_apps/psro; export CUDA_VISIBLE_DEVICES=
+conda activate sp_psro; cd grl/rl_apps/psro; export CUDA_VISIBLE_DEVICES=
 python general_psro_manager.py --scenario liars_dice_psro_dqn_shorter
 ```
 ```bash
-conda activate sp_psro; cd ~/git/grl/grl/rl_apps/psro; export CUDA_VISIBLE_DEVICES=
-python self_play_psro_last_iterate_br_both_players.py --scenario liars_dice_psro_dqn_shorter --instant_first_iter --force_sp_br_play_rate 0.05
+conda activate sp_psro; cd grl/rl_apps/psro; export CUDA_VISIBLE_DEVICES=
+python self_play_psro_last_iterate_br_both_players.py --scenario liars_dice_psro_dqn_shorter --instant_first_iter
 ```
 
 **APSRO** (run both scripts together, launch manager first)
 ```bash
-conda activate sp_psro; cd ~/git/grl/grl/rl_apps/psro; export CUDA_VISIBLE_DEVICES=
+conda activate sp_psro; cd grl/rl_apps/psro; export CUDA_VISIBLE_DEVICES=
 python general_psro_manager.py --scenario liars_dice_psro_dqn_shorter
 ```
 ```bash
-conda activate sp_psro; cd ~/git/grl/grl/rl_apps/psro; export CUDA_VISIBLE_DEVICES=
+conda activate sp_psro; cd grl/rl_apps/psro; export CUDA_VISIBLE_DEVICES=
 python anytime_psro_br_both_players.py --scenario liars_dice_psro_dqn_shorter --instant_first_iter
 ```
 
@@ -100,47 +100,47 @@ python anytime_psro_br_both_players.py --scenario liars_dice_psro_dqn_shorter --
 
 **PSRO**
 ```bash
-conda activate sp_psro; cd ~/git/grl/examples; export CUDA_VISIBLE_DEVICES=
+conda activate sp_psro; cd examples; export CUDA_VISIBLE_DEVICES=
 python launch_psro_as_single_script.py --instant_first_iter --scenario liars_dice_psro_dqn_shorter
 ```
 
 
-## Small Battleship
+## Small Battleship (Currently not supported with included OpenSpiel version, fix coming soon)
 
 **SP-PSRO** (run both scripts together, launch manager first)
 ```bash
-conda activate sp_psro; cd ~/git/grl/grl/rl_apps/psro; export CUDA_VISIBLE_DEVICES=
+conda activate sp_psro; cd grl/rl_apps/psro; export CUDA_VISIBLE_DEVICES=0
 python general_psro_manager.py --scenario battleship_psro_dqn_avg_pol
 ```
 ```bash
-conda activate sp_psro; cd ~/git/grl/grl/rl_apps/psro; export CUDA_VISIBLE_DEVICES=
+conda activate sp_psro; cd grl/rl_apps/psro; export CUDA_VISIBLE_DEVICES=0
 python self_play_psro_avg_policy_br_both_players.py --scenario battleship_psro_dqn_avg_pol --instant_first_iter --avg_policy_learning_rate 0.1 --train_avg_policy_for_n_iters_after 10000 --force_sp_br_play_rate 0.1
 ```
 
 **SP-PSRO Last-Iterate Ablation** (run both scripts together, launch manager first)
 ```bash
-conda activate sp_psro; cd ~/git/grl/grl/rl_apps/psro; export CUDA_VISIBLE_DEVICES=
+conda activate sp_psro; cd grl/rl_apps/psro; export CUDA_VISIBLE_DEVICES=
 python general_psro_manager.py --scenario battleship_psro_dqn
 ```
 ```bash
-conda activate sp_psro; cd ~/git/grl/grl/rl_apps/psro; export CUDA_VISIBLE_DEVICES=
-python self_play_psro_last_iterate_br_both_players.py --scenario battleship_psro_dqn --instant_first_iter --force_sp_br_play_rate 0.1
+conda activate sp_psro; cd grl/rl_apps/psro; export CUDA_VISIBLE_DEVICES=
+python self_play_psro_last_iterate_br_both_players.py --scenario battleship_psro_dqn --instant_first_iter
 ```
 
 **APSRO** (run both scripts together, launch manager first)
 ```bash
-conda activate sp_psro; cd ~/git/grl/grl/rl_apps/psro; export CUDA_VISIBLE_DEVICES=
+conda activate sp_psro; cd grl/rl_apps/psro; export CUDA_VISIBLE_DEVICES=
 python general_psro_manager.py --scenario battleship_psro_dqn
 ```
 ```bash
-conda activate sp_psro; cd ~/git/grl/grl/rl_apps/psro; export CUDA_VISIBLE_DEVICES=
+conda activate sp_psro; cd grl/rl_apps/psro; export CUDA_VISIBLE_DEVICES=
 python anytime_psro_br_both_players.py --scenario battleship_psro_dqn --instant_first_iter
 ```
 
 
 **PSRO**
 ```bash
-conda activate sp_psro; cd ~/git/grl/examples; export CUDA_VISIBLE_DEVICES=
+conda activate sp_psro; cd examples; export CUDA_VISIBLE_DEVICES=
 python launch_psro_as_single_script.py --instant_first_iter --scenario battleship_psro_dqn
 ```
 
@@ -149,37 +149,37 @@ python launch_psro_as_single_script.py --instant_first_iter --scenario battleshi
 
 **SP-PSRO** (run both scripts together, launch manager first)
 ```bash
-conda activate sp_psro; cd ~/git/grl/grl/rl_apps/psro; export CUDA_VISIBLE_DEVICES=
+conda activate sp_psro; cd grl/rl_apps/psro; export CUDA_VISIBLE_DEVICES=0
 python general_psro_manager.py --scenario repeated_rps_psro_dqn_avg_pol
 ```
 ```bash
-conda activate sp_psro; cd ~/git/grl/grl/rl_apps/psro; export CUDA_VISIBLE_DEVICES=
+conda activate sp_psro; cd grl/rl_apps/psro; export CUDA_VISIBLE_DEVICES=0
 python self_play_psro_avg_policy_br_both_players.py --scenario repeated_rps_psro_dqn_avg_pol --instant_first_iter --avg_policy_learning_rate 0.1 --train_avg_policy_for_n_iters_after 10000 --force_sp_br_play_rate 0.1
 ```
 
 **SP-PSRO Last-Iterate Ablation** (run both scripts together, launch manager first)
 ```bash
-conda activate sp_psro; cd ~/git/grl/grl/rl_apps/psro; export CUDA_VISIBLE_DEVICES=
+conda activate sp_psro; cd grl/rl_apps/psro; export CUDA_VISIBLE_DEVICES=
 python general_psro_manager.py --scenario repeated_rps_psro_dqn
 ```
 ```bash
-conda activate sp_psro; cd ~/git/grl/grl/rl_apps/psro; export CUDA_VISIBLE_DEVICES=
-python self_play_psro_last_iterate_br_both_players.py --scenario repeated_rps_psro_dqn --instant_first_iter --force_sp_br_play_rate 0.1
+conda activate sp_psro; cd grl/rl_apps/psro; export CUDA_VISIBLE_DEVICES=
+python self_play_psro_last_iterate_br_both_players.py --scenario repeated_rps_psro_dqn --instant_first_iter
 ```
 
 **APSRO** (run both scripts together, launch manager first)
 ```bash
-conda activate sp_psro; cd ~/git/grl/grl/rl_apps/psro; export CUDA_VISIBLE_DEVICES=
+conda activate sp_psro; cd grl/rl_apps/psro; export CUDA_VISIBLE_DEVICES=
 python general_psro_manager.py --scenario repeated_rps_psro_dqn
 ```
 ```bash
-conda activate sp_psro; cd ~/git/grl/grl/rl_apps/psro; export CUDA_VISIBLE_DEVICES=
+conda activate sp_psro; cd grl/rl_apps/psro; export CUDA_VISIBLE_DEVICES=
 python anytime_psro_br_both_players.py --scenario repeated_rps_psro_dqn --instant_first_iter
 ```
 
 **PSRO**
 ```bash
-conda activate sp_psro; cd ~/git/grl/examples; export CUDA_VISIBLE_DEVICES=
+conda activate sp_psro; cd examples; export CUDA_VISIBLE_DEVICES=
 python launch_psro_as_single_script.py --instant_first_iter --scenario repeated_rps_psro_dqn
 ```
 
@@ -187,37 +187,37 @@ python launch_psro_as_single_script.py --instant_first_iter --scenario repeated_
 
 **SP-PSRO** (run both scripts together, launch manager first)
 ```bash
-conda activate sp_psro; cd ~/git/grl/grl/rl_apps/psro; export CUDA_VISIBLE_DEVICES=
+conda activate sp_psro; cd grl/rl_apps/psro; export CUDA_VISIBLE_DEVICES=0
 python general_psro_manager.py --scenario leduc_psro_dqn_regret_avg_pol
 ```
 ```bash
-conda activate sp_psro; cd ~/git/grl/grl/rl_apps/psro; export CUDA_VISIBLE_DEVICES=
+conda activate sp_psro; cd grl/rl_apps/psro; export CUDA_VISIBLE_DEVICES=0
 python self_play_psro_avg_policy_br_both_players.py --scenario leduc_psro_dqn_regret_avg_pol --instant_first_iter --avg_policy_learning_rate 0.1 --train_avg_policy_for_n_iters_after 10000 --force_sp_br_play_rate 0.1
 ```
 
 **SP-PSRO Last-Iterate Ablation** (run both scripts together, launch manager first)
 ```bash
-conda activate sp_psro; cd ~/git/grl/grl/rl_apps/psro; export CUDA_VISIBLE_DEVICES=
+conda activate sp_psro; cd grl/rl_apps/psro; export CUDA_VISIBLE_DEVICES=
 python general_psro_manager.py --scenario leduc_psro_dqn_regret
 ```
 ```bash
-conda activate sp_psro; cd ~/git/grl/grl/rl_apps/psro; export CUDA_VISIBLE_DEVICES=
-python self_play_psro_last_iterate_br_both_players.py --scenario leduc_psro_dqn_regret --instant_first_iter --force_sp_br_play_rate 0.1
+conda activate sp_psro; cd grl/rl_apps/psro; export CUDA_VISIBLE_DEVICES=
+python self_play_psro_last_iterate_br_both_players.py --scenario leduc_psro_dqn_regret --instant_first_iter
 ```
 
 **APSRO** (run both scripts together, launch manager first)
 ```bash
-conda activate sp_psro; cd ~/git/grl/grl/rl_apps/psro; export CUDA_VISIBLE_DEVICES=
+conda activate sp_psro; cd grl/rl_apps/psro; export CUDA_VISIBLE_DEVICES=
 python general_psro_manager.py --scenario leduc_psro_dqn_regret
 ```
 ```bash
-conda activate sp_psro; cd ~/git/grl/grl/rl_apps/psro; export CUDA_VISIBLE_DEVICES=
+conda activate sp_psro; cd grl/rl_apps/psro; export CUDA_VISIBLE_DEVICES=
 python anytime_psro_br_both_players.py --scenario leduc_psro_dqn_regret --instant_first_iter
 ```
 
 **PSRO**
 ```bash
-conda activate sp_psro; cd ~/git/grl/examples; export CUDA_VISIBLE_DEVICES=
+conda activate sp_psro; cd examples; export CUDA_VISIBLE_DEVICES=
 python launch_psro_as_single_script.py --instant_first_iter --scenario leduc_psro_dqn_regret
 ```
 

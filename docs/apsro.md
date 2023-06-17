@@ -56,11 +56,11 @@ Multiple experiments with the same scenario can be launched on a single host by 
 ## Leduc Poker
 **APSRO** (run both scripts together, launch manager first)
 ```bash
-conda activate sp_psro; cd ~/git/grl/grl/rl_apps/psro; export CUDA_VISIBLE_DEVICES=
+conda activate sp_psro; cd grl/rl_apps/psro; export CUDA_VISIBLE_DEVICES=
 python general_psro_manager.py --scenario leduc_psro_dqn_regret
 ```
 ```bash
-conda activate sp_psro; cd ~/git/grl/grl/rl_apps/psro; export CUDA_VISIBLE_DEVICES=
+conda activate sp_psro; cd grl/rl_apps/psro; export CUDA_VISIBLE_DEVICES=
 python anytime_psro_br_both_players.py --scenario leduc_psro_dqn_regret --instant_first_iter
 ```
 
@@ -68,7 +68,7 @@ python anytime_psro_br_both_players.py --scenario leduc_psro_dqn_regret --instan
 
 **PSRO**
 ```bash
-conda activate sp_psro; cd ~/git/grl/examples; export CUDA_VISIBLE_DEVICES=
+conda activate sp_psro; cd examples; export CUDA_VISIBLE_DEVICES=
 python launch_psro_as_single_script.py  --scenario leduc_psro_dqn_regret --instant_first_iter
 ```
 
@@ -76,18 +76,18 @@ python launch_psro_as_single_script.py  --scenario leduc_psro_dqn_regret --insta
 ## Goofspiel
 **APSRO** (run both scripts together, launch manager first)
 ```bash
-conda activate sp_psro; cd ~/git/grl/grl/rl_apps/psro; export CUDA_VISIBLE_DEVICES=
+conda activate sp_psro; cd grl/rl_apps/psro; export CUDA_VISIBLE_DEVICES=
 python general_psro_manager.py --scenario goofspiel_psro_dqn
 ```
 ```bash
-conda activate sp_psro; cd ~/git/grl/grl/rl_apps/psro; export CUDA_VISIBLE_DEVICES=
+conda activate sp_psro; cd grl/rl_apps/psro; export CUDA_VISIBLE_DEVICES=
 python anytime_psro_br_both_players.py --scenario goofspiel_psro_dqn --instant_first_iter
 ```
 
 
 **PSRO**
 ```bash
-conda activate sp_psro; cd ~/git/grl/examples; export CUDA_VISIBLE_DEVICES=
+conda activate sp_psro; cd examples; export CUDA_VISIBLE_DEVICES=
 python launch_psro_as_single_script.py  --scenario goofspiel_psro_dqn --instant_first_iter
 ```
 
@@ -95,17 +95,17 @@ python launch_psro_as_single_script.py  --scenario goofspiel_psro_dqn --instant_
 ## 2D Continuous-Action Hill-Climbing Game
 **APSRO** (run both scripts together, launch manager first)
 ```bash
-conda activate sp_psro; cd ~/git/grl/grl/rl_apps/psro; export CUDA_VISIBLE_DEVICES=
+conda activate sp_psro; cd grl/rl_apps/psro; export CUDA_VISIBLE_DEVICES=
 python general_psro_manager.py --scenario loss_game_psro_10_moves_alpha_2.7
 ```
 ```bash
-conda activate sp_psro; cd ~/git/grl/grl/rl_apps/psro; export CUDA_VISIBLE_DEVICES=
+conda activate sp_psro; cd grl/rl_apps/psro; export CUDA_VISIBLE_DEVICES=
 python anytime_psro_br_both_players.py --scenario loss_game_psro_10_moves_alpha_2.7 --instant_first_iter
 ```
 
 **PSRO**
 ```bash
-conda activate sp_psro; cd ~/git/grl/examples; export CUDA_VISIBLE_DEVICES=
+conda activate sp_psro; cd examples; export CUDA_VISIBLE_DEVICES=
 python launch_psro_as_single_script.py  --scenario loss_game_psro_10_moves_alpha_2.7 --instant_first_iter
 ```
 

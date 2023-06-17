@@ -34,7 +34,7 @@ We include a slightly modified [fork](https://github.com/indylab/open_spiel/tree
 # Starting from the repo root
 cd dependencies/open_spiel
 ./install.sh
-pip install -e . # This will start a compilation process. May take a few minutes.
+OPEN_SPIEL_BUILD_WITH_ACPC=OFF OPEN_SPIEL_BUILD_WITH_HANABI=OFF pip install -e . # This will start a compilation process. May take a few minutes.
 cd ../..
 ```
 

@@ -1,4 +1,4 @@
-# SP-PSRO Examples
+# Running Self-Play PSRO Experiments
 
 Instructions to reproduce neural experiments from [Self-Play PSRO: Toward Optimal Populations in
 Two-Player Zero-Sum Games](https://arxiv.org/abs/2207.06541)
@@ -29,7 +29,7 @@ export GRL_SEED="10$(tmux display-message -p '#I')00$(tmux display -pt "${TMUX_P
 ```
 
 ## Liar's Dice
-**SP-PSRO** (run both scripts together)
+**SP-PSRO** (run both scripts together, launch manager first)
 ```bash
 conda activate grl_dev; cd ~/git/grl/grl/rl_apps/psro; export CUDA_VISIBLE_DEVICES=; export GRL_SEED=$(tmux display-message -p '#I')
 python general_psro_manager.py --scenario liars_dice_psro_dqn_shorter_avg_pol
@@ -39,7 +39,7 @@ conda activate grl_dev; cd ~/git/grl/grl/rl_apps/psro; export CUDA_VISIBLE_DEVIC
 python self_play_psro_avg_policy_br_both_players.py.py --scenario liars_dice_psro_dqn_shorter_avg_pol --instant_first_iter --avg_policy_learning_rate 0.1 --train_avg_policy_for_n_iters_after 10000 --force_sp_br_play_rate 0.05
 ```
 
-**SP-PSRO Last-Iterate Ablation** (run both scripts together)
+**SP-PSRO Last-Iterate Ablation** (run both scripts together, launch manager first)
 ```bash
 conda activate grl_dev; cd ~/git/grl/grl/rl_apps/psro; export CUDA_VISIBLE_DEVICES=; export GRL_SEED=$(tmux display-message -p '#I')
 python general_psro_manager.py --scenario liars_dice_psro_dqn_shorter
@@ -49,7 +49,7 @@ conda activate grl_dev; cd ~/git/grl/grl/rl_apps/psro; export CUDA_VISIBLE_DEVIC
 python self_play_psro_last_iterate_br_both_players.py.py --scenario liars_dice_psro_dqn_shorter --instant_first_iter --force_sp_br_play_rate 0.05
 ```
 
-**APSRO** (run both scripts together)
+**APSRO** (run both scripts together, launch manager first)
 ```bash
 conda activate grl_dev; cd ~/git/grl/grl/rl_apps/psro; export CUDA_VISIBLE_DEVICES=; export GRL_SEED=$(tmux display-message -p '#I')
 python general_psro_manager.py --scenario liars_dice_psro_dqn_shorter
@@ -70,7 +70,7 @@ python launch_psro_as_single_script.py --instant_first_iter --scenario liars_dic
 
 ## Small Battleship
 
-**SP-PSRO** (run both scripts together)
+**SP-PSRO** (run both scripts together, launch manager first)
 ```bash
 conda activate grl_dev; cd ~/git/grl/grl/rl_apps/psro; export CUDA_VISIBLE_DEVICES=; export GRL_SEED=$(tmux display-message -p '#I')
 python general_psro_manager.py --scenario battleship_psro_dqn_avg_pol
@@ -80,7 +80,7 @@ conda activate grl_dev; cd ~/git/grl/grl/rl_apps/psro; export CUDA_VISIBLE_DEVIC
 python self_play_psro_avg_policy_br_both_players.py.py --scenario battleship_psro_dqn_avg_pol --instant_first_iter --avg_policy_learning_rate 0.1 --train_avg_policy_for_n_iters_after 10000 --force_sp_br_play_rate 0.1
 ```
 
-**SP-PSRO Last-Iterate Ablation** (run both scripts together)
+**SP-PSRO Last-Iterate Ablation** (run both scripts together, launch manager first)
 ```bash
 conda activate grl_dev; cd ~/git/grl/grl/rl_apps/psro; export CUDA_VISIBLE_DEVICES=; export GRL_SEED=$(tmux display-message -p '#I')
 python general_psro_manager.py --scenario battleship_psro_dqn
@@ -90,7 +90,7 @@ conda activate grl_dev; cd ~/git/grl/grl/rl_apps/psro; export CUDA_VISIBLE_DEVIC
 python self_play_psro_last_iterate_br_both_players.py.py --scenario battleship_psro_dqn --instant_first_iter --force_sp_br_play_rate 0.1
 ```
 
-**APSRO** (run both scripts together)
+**APSRO** (run both scripts together, launch manager first)
 ```bash
 conda activate grl_dev; cd ~/git/grl/grl/rl_apps/psro; export CUDA_VISIBLE_DEVICES=; export GRL_SEED=$(tmux display-message -p '#I')
 python general_psro_manager.py --scenario battleship_psro_dqn
@@ -110,7 +110,7 @@ python launch_psro_as_single_script.py --instant_first_iter --scenario battleshi
 
 ## 4-Repeated Rock-Paper-Scissors
 
-**SP-PSRO** (run both scripts together)
+**SP-PSRO** (run both scripts together, launch manager first)
 ```bash
 conda activate grl_dev; cd ~/git/grl/grl/rl_apps/psro; export CUDA_VISIBLE_DEVICES=; export GRL_SEED=$(tmux display-message -p '#I')
 python general_psro_manager.py --scenario repeated_rps_psro_dqn_avg_pol
@@ -120,7 +120,7 @@ conda activate grl_dev; cd ~/git/grl/grl/rl_apps/psro; export CUDA_VISIBLE_DEVIC
 python self_play_psro_avg_policy_br_both_players.py.py --scenario repeated_rps_psro_dqn_avg_pol --instant_first_iter --avg_policy_learning_rate 0.1 --train_avg_policy_for_n_iters_after 10000 --force_sp_br_play_rate 0.1
 ```
 
-**SP-PSRO Last-Iterate Ablation** (run both scripts together)
+**SP-PSRO Last-Iterate Ablation** (run both scripts together, launch manager first)
 ```bash
 conda activate grl_dev; cd ~/git/grl/grl/rl_apps/psro; export CUDA_VISIBLE_DEVICES=; export GRL_SEED=$(tmux display-message -p '#I')
 python general_psro_manager.py --scenario repeated_rps_psro_dqn
@@ -130,7 +130,7 @@ conda activate grl_dev; cd ~/git/grl/grl/rl_apps/psro; export CUDA_VISIBLE_DEVIC
 python self_play_psro_last_iterate_br_both_players.py.py --scenario repeated_rps_psro_dqn --instant_first_iter --force_sp_br_play_rate 0.1
 ```
 
-**APSRO** (run both scripts together)
+**APSRO** (run both scripts together, launch manager first)
 ```bash
 conda activate grl_dev; cd ~/git/grl/grl/rl_apps/psro; export CUDA_VISIBLE_DEVICES=; export GRL_SEED=$(tmux display-message -p '#I')
 python general_psro_manager.py --scenario repeated_rps_psro_dqn
@@ -148,7 +148,7 @@ python launch_psro_as_single_script.py --instant_first_iter --scenario repeated_
 
 ## Leduc Poker
 
-**SP-PSRO** (run both scripts together)
+**SP-PSRO** (run both scripts together, launch manager first)
 ```bash
 conda activate grl_dev; cd ~/git/grl/grl/rl_apps/psro; export CUDA_VISIBLE_DEVICES=; export GRL_SEED=$(tmux display-message -p '#I')
 python general_psro_manager.py --scenario leduc_psro_dqn_regret_avg_pol
@@ -158,7 +158,7 @@ conda activate grl_dev; cd ~/git/grl/grl/rl_apps/psro; export CUDA_VISIBLE_DEVIC
 python self_play_psro_avg_policy_br_both_players.py.py --scenario leduc_psro_dqn_regret_avg_pol --instant_first_iter --avg_policy_learning_rate 0.1 --train_avg_policy_for_n_iters_after 10000 --force_sp_br_play_rate 0.1
 ```
 
-**SP-PSRO Last-Iterate Ablation** (run both scripts together)
+**SP-PSRO Last-Iterate Ablation** (run both scripts together, launch manager first)
 ```bash
 conda activate grl_dev; cd ~/git/grl/grl/rl_apps/psro; export CUDA_VISIBLE_DEVICES=; export GRL_SEED=$(tmux display-message -p '#I')
 python general_psro_manager.py --scenario leduc_psro_dqn_regret
@@ -168,7 +168,7 @@ conda activate grl_dev; cd ~/git/grl/grl/rl_apps/psro; export CUDA_VISIBLE_DEVIC
 python self_play_psro_last_iterate_br_both_players.py.py --scenario leduc_psro_dqn_regret --instant_first_iter --force_sp_br_play_rate 0.1
 ```
 
-**APSRO** (run both scripts together)
+**APSRO** (run both scripts together, launch manager first)
 ```bash
 conda activate grl_dev; cd ~/git/grl/grl/rl_apps/psro; export CUDA_VISIBLE_DEVICES=; export GRL_SEED=$(tmux display-message -p '#I')
 python general_psro_manager.py --scenario leduc_psro_dqn_regret
@@ -184,8 +184,7 @@ conda activate grl_dev; cd ~/git/grl/examples; export CUDA_VISIBLE_DEVICES=; exp
 python launch_psro_as_single_script.py --instant_first_iter --scenario leduc_psro_dqn_regret
 ```
 
-# Example Utility scripts
+# Graphing results 
+See [notebooks](/notebooks) for example scripts to graph exploitability vs experience collected. 
 
-## Graphing results 
-TODO
 

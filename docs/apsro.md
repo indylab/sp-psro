@@ -1,10 +1,10 @@
-# APSRO Examples
+# Running APSRO Experiments
 
 Instructions to reproduce neural experiments from [Anytime PSRO for Two-Player Zero-Sum Games](https://arxiv.org/abs/2201.07700)
 
 ## Launching Main Experiments
 
-Prior to all main experiment scripts:
+Prior to all main experiment scripts, run:
 ```bash
 conda activate grl_dev
 export CUDA_VISIBLE_DEVICES=
@@ -28,7 +28,7 @@ export GRL_SEED="10$(tmux display-message -p '#I')00$(tmux display -pt "${TMUX_P
 ```
 
 ## Leduc Poker
-**APSRO** (run both scripts together)
+**APSRO** (run both scripts together, launch manager first)
 ```bash
 conda activate grl_dev; cd ~/git/grl/grl/rl_apps/psro; export CUDA_VISIBLE_DEVICES=; export GRL_SEED=$(tmux display-message -p '#I')
 python general_psro_manager.py --scenario leduc_psro_dqn_regret
@@ -48,7 +48,7 @@ python launch_psro_as_single_script.py  --scenario leduc_psro_dqn_regret --insta
 
 
 ## Goofspiel
-**APSRO** (run both scripts together)
+**APSRO** (run both scripts together, launch manager first)
 ```bash
 conda activate grl_dev; cd ~/git/grl/grl/rl_apps/psro; export CUDA_VISIBLE_DEVICES=; export GRL_SEED=$(tmux display-message -p '#I')
 python general_psro_manager.py --scenario goofspiel_psro_dqn
@@ -67,7 +67,7 @@ python launch_psro_as_single_script.py  --scenario goofspiel_psro_dqn --instant_
 
 
 ## 2D Continuous-Action Hill-Climbing Game
-**APSRO** (run both scripts together)
+**APSRO** (run both scripts together, launch manager first)
 ```bash
 conda activate grl_dev; cd ~/git/grl/grl/rl_apps/psro; export CUDA_VISIBLE_DEVICES=; export GRL_SEED=$(tmux display-message -p '#I')
 python general_psro_manager.py --scenario loss_game_psro_10_moves_alpha_2.7
@@ -77,17 +77,17 @@ conda activate grl_dev; cd ~/git/grl/grl/rl_apps/psro; export CUDA_VISIBLE_DEVIC
 python anytime_psro_br_both_players.py.py --scenario loss_game_psro_10_moves_alpha_2.7 --instant_first_iter
 ```
 
-**PSRO** (default is PPO)
+**PSRO**
 ```bash
 conda activate grl_dev; cd ~/git/grl/examples; export CUDA_VISIBLE_DEVICES=; export GRL_SEED="10$(tmux display-message -p '#I')00$(tmux display -pt "${TMUX_PANE:?}" '#{pane_index}')"
 python launch_psro_as_single_script.py  --scenario loss_game_psro_10_moves_alpha_2.7 --instant_first_iter
 ```
 
-# Example Utility scripts
 
-
-## Measuring Approximate Exploitability for Large Games after APSRO/PSRO runs.
+# Measuring Approximate Exploitability for Large Games
 TODO
 
-## Graphing results 
-TODO
+# Graphing results 
+See [notebooks](/notebooks) for example scripts to graph exploitability vs experience collected. 
+
+For smaller games, exact exploitability is logged during training. For larger games like Goofspiel and the 2D Continuous Hill-Climbing Game, approximate exploitability needs to be separately estimated by training best-responses against checkpoints in a standalone script. 

@@ -47,6 +47,5 @@ pip install -e .
 
 ### Next Steps
 
-- [APSRO Instructions](/docs/apsro.md)
-
-- [SP-PSRO Instructions](/docs/sp-psro.md)
+- [Running APSRO Experiments](/docs/apsro.md)
+- [Running SP-PSRO Experiments](/docs/sp-psro.md)

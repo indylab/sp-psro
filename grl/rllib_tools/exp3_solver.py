@@ -1,12 +1,9 @@
-import time
 from collections import deque
 from typing import Optional, List, Callable, Dict
 
 import numpy as np
 import ray
 from ray.rllib import Policy
-from ray.rllib.utils.typing import ModelWeights
-from pyspiel import Game as OpenSpielGame
 import pyspiel
 from pyspiel import Policy as OpenSpielPolicy
 from open_spiel.python.algorithms import expected_game_score
@@ -133,13 +130,11 @@ class Exp3ModelBasedSolver:
         if self._game_parameters is None:
             if game_version in ["kuhn_poker", "leduc_poker", "leduc_poker_10_card"]:
                 self._game_parameters = {
-                    "players": pyspiel.GameParameter(2)
+                    "players": 2
                 }
             else:
                 self._game_parameters = {}
-        self._game_parameters = {k: pyspiel.GameParameter(v) if not isinstance(v, pyspiel.GameParameter) else v for k, v
-                                 in
-                                 self._game_parameters.items()}
+        self._game_parameters = {k: v for k, v in self._game_parameters.items()}
         openspiel_game = pyspiel.load_game(game_version, self._game_parameters)
         if game_version in ["oshi_zumo", "goofspiel"]:
             openspiel_game = pyspiel.convert_to_turn_based(openspiel_game)
@@ -553,13 +548,11 @@ class MWUModelBasedSolver:
         if self._game_parameters is None:
             if game_version in ["kuhn_poker", "leduc_poker", "leduc_poker_10_card"]:
                 self._game_parameters = {
-                    "players": pyspiel.GameParameter(2)
+                    "players": 2
                 }
             else:
                 self._game_parameters = {}
-        self._game_parameters = {k: pyspiel.GameParameter(v) if not isinstance(v, pyspiel.GameParameter) else v for k, v
-                                 in
-                                 self._game_parameters.items()}
+        self._game_parameters = {k: v for k, v in self._game_parameters.items()}
         openspiel_game = pyspiel.load_game(game_version, self._game_parameters)
         if game_version in ["oshi_zumo", "goofspiel"]:
             openspiel_game = pyspiel.convert_to_turn_based(openspiel_game)

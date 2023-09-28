@@ -1,8 +1,8 @@
 
-## Official code to reproduce neural experiments from <br/>[Anytime PSRO for Two-Player Zero-Sum Games](https://arxiv.org/abs/2201.07700) <br/>and <br/> [Self-Play PSRO: Toward Optimal Populations in Two-Player Zero-Sum Games](https://arxiv.org/abs/2207.06541)
+# Deep RL Experiment Code for Toward Optimal Policy Population Growth in Two-Player Zero-Sum Games
+
 
 ## Instructions:
 
 1. [Installation](/docs/install.md)
-2. [Running APSRO Experiments](/docs/apsro.md)
-3. [Running SP-PSRO Experiments](/docs/sp-psro.md)
+2. [Running SP-PSRO Experiments](/docs/sp-psro.md)

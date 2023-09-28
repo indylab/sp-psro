@@ -277,11 +277,10 @@ def openspiel_policy_from_nonlstm_rllib_policy(openspiel_game: OpenSpielGame,
         valid_actions_mask = state.legal_actions_mask()
         legal_actions_list = state.legal_actions()
         # assert np.array_equal(valid_actions, np.ones_like(valid_actions)) # should be always true for Kuhn Poker
-        try:
-            info_state_vector = state.information_state_tensor()
-        except pyspiel.SpielError:
-            assert game_version == "battleship", game_version
+        if game_version == "battleship":
             info_state_vector = battleship_infostate_tensor(state=state, player=state.current_player())
+        else:
+            info_state_vector = state.information_state_tensor()
 
         if game_version in ["kuhn_poker", "leduc_poker", "oshi_zumo", "oshi_zumo_tiny", "universal_poker", "leduc_poker_10_card", "liars_dice", "goofspiel", "battleship", "spsro_repeated_rps", "spsro_biased_repeated_rps", "dummy_repeated_rps"]:
 
@@ -374,7 +373,7 @@ def psro_measure_exploitability_nonlstm(br_checkpoint_path_tuple_list: List[Tupl
     if open_spiel_env_config is None:
         if poker_game_version in ["kuhn_poker", "leduc_poker", "leduc_poker_10_card"]:
             open_spiel_env_config = {
-                "players": pyspiel.GameParameter(2)
+                "players": 2
             }
         else:
             open_spiel_env_config = {}
@@ -398,9 +397,7 @@ def psro_measure_exploitability_nonlstm(br_checkpoint_path_tuple_list: List[Tupl
         openspiel_game = get_openspiel_game_from_normal_from_game_asset_id(poker_game_version)
         openspiel_game = pyspiel.convert_to_turn_based(openspiel_game)
     else:
-        open_spiel_env_config = {k: pyspiel.GameParameter(v) if not isinstance(v, pyspiel.GameParameter) else v for k, v
-                                 in
-                                 open_spiel_env_config.items()}
+        open_spiel_env_config = {k: v for k, v in open_spiel_env_config.items()}
 
         openspiel_game = pyspiel.load_game(poker_game_version, open_spiel_env_config)
         if poker_game_version in ["oshi_zumo", "goofspiel"]:
@@ -451,13 +448,12 @@ def dream_sd_measure_exploitability_nonlstm(br_checkpoint_path_tuple_list: List[
     if open_spiel_env_config is None:
         if poker_game_version in ["kuhn_poker", "leduc_poker", "leduc_poker_10_card"]:
             open_spiel_env_config = {
-                "players": pyspiel.GameParameter(2)
+                "players": 2
             }
         else:
             open_spiel_env_config = {}
 
-    open_spiel_env_config = {k: pyspiel.GameParameter(v) if not isinstance(v, pyspiel.GameParameter) else v for k, v in
-                             open_spiel_env_config.items()}
+    open_spiel_env_config = {k: v for k, v in open_spiel_env_config.items()}
 
     openspiel_game = pyspiel.load_game(poker_game_version, open_spiel_env_config)
     if poker_game_version in ["oshi_zumo", "goofspiel"]:

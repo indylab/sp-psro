@@ -3,20 +3,9 @@
 
 ### Overview
 
-1. Clone the repo.
-2. Set up a Conda env.
+1. Set up a Conda env.
 3. Install python modules (including bundled dependencies).
 
-
-### Clone repo with git submodules
-```shell script
-git clone --recursive git@github.com:indylab/sp-psro.git
-cd grl
-```
-If you've already cloned this repo but not the [submodules](/dependencies), you can clone them with:
-```shell script
-git submodule update --init --recursive
-```
 
 ### Set up Conda environment
 After installing [Anaconda](https://docs.anaconda.com/anaconda/install/), enter the repo directory and create the new environment:
@@ -29,7 +18,7 @@ conda activate sp_psro
 
 #### 1. DeepMind OpenSpiel (included dependency)
 DeepMind's [OpenSpiel](https://github.com/deepmind/open_spiel) is used for poker game logic as well as tabular game utilities.
-We include a slightly modified [fork](https://github.com/indylab/open_spiel/tree/spsro-release) as a dependency.
+We include a slightly modified fork as a dependency.
 ```shell script
 # Starting from the repo root
 cd dependencies/open_spiel
@@ -47,5 +36,4 @@ pip install -e .
 
 ### Next Steps
 
-- [Running APSRO Experiments](/docs/apsro.md)
 - [Running SP-PSRO Experiments](/docs/sp-psro.md)
